@@ -39,7 +39,7 @@ class Tarjetas implements Tarjeta{
 								$this->monto=1.32;
 							}
 							
-							else if(($hora>22||$hora<6) && ($hora-$this->boleto->darhora())<=1.3 && ($dia==$this->boleto->dardia())==1)){
+							else if(($hora>22||$hora<6) && ($hora-$this->boleto->darhora())<=1.3 && ($dia==$this->boleto->dardia()==1)){
 								#trasbordo
 								$this->saldo=$this->saldo-1.32;
 								$this->monto=1.32;
