@@ -33,13 +33,13 @@ class Tarjetas implements Tarjeta{
 						#ya sea terciario, secundario o primario, se puede usar sólo entre semana
 						if($fecha!="sabado" && $fecha!="domingo"){
 							
-							if($hora<22 && $hora> 6 && ($hora-$this->boleto->darhora())<=1 && ($dia==$this->boleto->dardia()||($dia-$this->boleto->dardia())==1)){
+							if($hora<22 && $hora> 6 && ($hora-$this->boleto->darhora())<=1 && ($dia==$this->boleto->dardia()){
 								#trasbordo
 								$this->saldo=$this->saldo-1.32;
 								$this->monto=1.32;
 							}
 							
-							else if(($hora>22||$hora<6) && ($hora-$this->boleto->darhora())<=1.3 && ($dia==$this->boleto->dardia()||($dia-$this->boleto->dardia())==1)){
+							else if(($hora>22||$hora<6) && ($hora-$this->boleto->darhora())<=1.3 && ($dia==$this->boleto->dardia())==1)){
 								#trasbordo
 								$this->saldo=$this->saldo-1.32;
 								$this->monto=1.32;
@@ -54,13 +54,13 @@ class Tarjetas implements Tarjeta{
 					
 					else{
 						#Posible Trasbordo normal
-						if($hora<22 && $hora>6 && ($hora-$this->boleto->darhora())<=1 && ($dia==$this->boleto->dardia()||($dia-$this->boleto->dardia())==1) && $this->boleto->darmonto() != 2.64){
+						if($hora<22 && $hora>6 && ($hora-$this->boleto->darhora())<=1 && ($dia==$this->boleto->dardia()) && $this->boleto->darmonto() != 2.64){
 							#trasbordo
 							$this->saldo=$this->saldo-2.64;
 							$this->monto=2.64;
 						}
 						
-						else if(($hora>22||$hora<6) && ($hora-$this->boleto->darhora())<=1.3 && ($dia==$this->boleto->dardia()||($dia-$this->boleto->dardia())==1) && $this->boleto->darmonto() != 2.64){
+						else if(($hora>22||$hora<6) && ($hora-$this->boleto->darhora())<=1.3 && ($dia==$this->boleto->dardia()) && $this->boleto->darmonto() != 2.64){
 							#trasbordo
 							$this->saldo=$this->saldo-2.64;
 							$this->monto=2.64;
