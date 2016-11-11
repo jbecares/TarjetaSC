@@ -33,7 +33,7 @@ class Tarjetas implements Tarjeta{
 						#ya sea terciario, secundario o primario, se puede usar sólo entre semana
 						if($fecha!="sabado" && $fecha!="domingo"){
 							
-							if($hora<22 && $hora> 6 && ($hora-$this->boleto->darhora())<=1 && ($dia==$this->boleto->dardia()){
+							if($hora<22 && $hora> 6 && ($hora-$this->boleto->darhora())<=1 && ($dia==$this->boleto->dardia())){
 								#trasbordo
 								$this->saldo=$this->saldo-1.32;
 								$this->monto=1.32;
